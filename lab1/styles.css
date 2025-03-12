@@ -1,0 +1,534 @@
+html, body {
+    height: 100%; 
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    background-color: #F2F2EF;
+    scroll-behavior: smooth;
+}
+
+main {
+    flex: 1; 
+}
+
+header {
+    display: flex;                      
+    justify-content: space-between;    
+    align-items: center;
+    padding: 15px 20px;                 
+    position: fixed;                 
+    top: 0;                            
+    left: 0;
+    width: 100%;                       
+    z-index: 1000;                     
+}
+
+/* Логотип і назва */
+.logo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo img {
+    height: 55px; 
+    width: 40px; 
+}
+
+.site-name {
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 25px; 
+    color: black;
+    margin-left: 5px; 
+}
+
+/* Навігаційний бар (кнопки) */
+.navbar {
+    display: flex;                   
+    background-color: rgba(16, 1, 2, 0.6); 
+    padding: 10px;                
+    border-radius: 30px;                
+    margin-top: 8px;
+    margin-right: 60px;                   
+    margin-left: auto;                                          
+    width: fit-content;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    border: 2px solid rgbargba(169, 169, 169, 0.6); 
+    color: #F5F5F5;
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 17px; 
+    padding: 3px 50px;                      
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px; 
+    margin: 0 10px; 
+    box-sizing: content-box; 
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.nav-btn:active {
+    transform: scale(0.95); 
+}
+
+/*Нижній бар*/
+footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%; 
+    background-color: rgba(16, 1, 2, 0.7); 
+    color: #F5F5F5; 
+    padding: 15px 40px; 
+    height: 60px; 
+    margin-top: 60px;
+    box-sizing: border-box;
+    position: relative; 
+}
+
+footer div {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+footer p {
+    margin: 0; 
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+}
+
+/*-----------------------------------------------ВІКНО УРОКИ----------------------------------------------------*/
+.lessons-title {
+    text-align: center;      
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin: 120px 0 20px 0;    
+}
+
+.lessons {
+    display: grid;                             
+    grid-template-columns: repeat(3, 1fr);      
+    gap: 70px;                                 
+    padding: 10px 60px 0 60px;                    
+}
+
+.lesson {
+    position: relative;
+    background-color: rgba(16, 1, 2, 0.3); 
+    border-radius: 30px; 
+    padding: 4px 10px 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    height: 200px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lesson h3 {
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 22px;
+    color: #F5F5F5;
+    padding: 0 10px;
+    margin-bottom: 1px;
+}
+
+.lesson p {
+    padding: 0 10px;
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 15px;
+    color: #F5F5F5;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.lesson img.lesson-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    width: 45px; 
+    height: 55px;
+}
+
+.lesson:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); 
+}
+
+.lesson:active{
+    transform: scale(1); 
+}
+
+
+/*-----------------------------------------------ВІКНО ПРАКТИКА----------------------------------------------------*/
+.practice-title {
+    text-align: center;       
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin: 100px 0 20px 0;    
+}
+
+.tests {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 20px; 
+    padding: 0 60px 60px 60px; 
+}
+
+.test {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(16, 1, 2, 0.3); 
+    border-radius: 15px; 
+    padding: 15px 20px;
+    height: 80px; 
+}
+
+.test div:first-child {
+    display: flex;
+    gap: 5px; 
+    font-size: 22px;
+    color: #F5F5F5;
+    align-items: center;
+}
+
+.test div:last-child {
+    display: flex;
+    gap: 10px; 
+    font-size: 22px;
+    color: #F5F5F5; 
+    align-items: center;
+}
+
+.start-btn {
+    background-color: rgba(16, 1, 2, 0.3);
+    color: #F2F2EF;
+    font-size: 20px;
+    border: none;
+    padding: 6px 25px;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.start-btn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+}
+
+
+/*-----------------------------------------------ВІКНО МІЙ ПРОГРЕС----------------------------------------------------*/
+.progress-title {
+    text-align: center;       
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin: 100px 0 20px 0;    
+}
+
+.progress-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    justify-items: center; 
+    align-items: center;
+    text-align: center;
+    padding: 10px 60px 10px 60px;
+}
+
+.progress-item {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-item img {
+    width: 150px; 
+    height: auto;
+}
+
+.pie-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #B54213 0% 91%,  
+        #FFDB58 91% 100%  
+    );
+    display: block;
+    margin: 10px;
+    position: relative;
+}
+
+.pie-chart::after {
+    content: "";
+    width: 100px;  
+    height: 100px;
+    background-color: #F2F2EF; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.streak-value{
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    margin-top: -60px; 
+    padding: 5px 10px;
+}
+
+.lessons-value{
+    position: absolute;
+    top: 30%; 
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+.tests-value{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-top: -100px; 
+    padding: 0 45px 70px 70px;
+}
+
+.progress-text{
+    font-size: 25px;
+    color: black;
+}
+
+
+/*------------------Адаптивність для планшетів--------------------------------------------------*/
+@media (max-width: 1024px) {
+    .lessons {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px; 
+        padding: 10px 40px 0 40px;
+    }
+
+    .navbar {
+        padding: 8px; 
+        margin-left: 20px; 
+        margin-right: 40px;
+    }
+
+    .nav-btn {
+        font-size: 15px; 
+        padding: 3px 30px; 
+        border-radius: 10px; 
+    }
+
+    .test div:first-child,
+    .test div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 2px; 
+        font-size: 20px;
+    }
+
+    .test div:first-child {
+        align-items: flex-start; 
+    }
+
+    .test div:last-child {
+        align-items: flex-end; 
+    }
+
+    .test div:first-child p,
+    .test div:last-child p {
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .progress-container {
+        gap: 30px; 
+        padding: 10px 40px;
+    }
+    
+    .progress-item img {
+        width: 120px; 
+    }
+
+    .lessons-value {
+        font-size: 40px; 
+        top: 30%;
+    }
+
+    .progress-text {
+        font-size: 22px;
+    }
+
+    .pie-chart {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .pie-chart::after {
+        width: 80px;  
+        height: 80px;
+    }
+
+    .tests-value{
+        font-size: 18px;
+        margin-top: -74px; 
+        padding: 0 35px 70px 43px;
+    }
+
+}
+
+/*------------------Адаптивність для смартфонів--------------------------------------------------*/
+@media (max-width: 768px) {
+    .logo img {
+        height: 28px; 
+        width: 18px; 
+    }
+
+    .site-name {
+        font-size: 13px; 
+        margin-left: 2px; 
+    }
+
+    .lessons {
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 20px;
+        padding: 10px 20px 0 20px;
+    }
+
+    .lesson{
+        height: 140px;
+    }
+
+    .lesson h3 {
+        font-size: 18px;
+    }
+
+    .lesson p {
+        font-size: 13px;
+        margin-top: 6px;
+    }
+
+    .lesson img.lesson-icon {
+        bottom: 10px;
+        right: 20px;
+        width: 35px; 
+        height: 45px;
+    }
+
+    .navbar {
+        padding: 5px 1px 5px 1px;                  
+        margin-right: 15px;
+        width: fit-content;
+        margin: 0 auto; 
+    }
+
+    .nav-btn {
+        font-size: 10px; 
+        padding: 3px 10px; 
+        border-width: 1px;
+        flex-grow: 1; 
+        margin: 0 3px;
+        min-width: 50px;
+    }
+
+    .tests {
+        padding: 0 20px 60px 20px; 
+    }
+
+    .test {
+        padding: 15px;
+        height: 70px;
+    }
+
+    .start-btn {
+        font-size: 15px;
+        margin-right: 2px;
+        border-radius: 10px;
+    }
+
+    .test div:first-child,
+    .test div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 2px; 
+        font-size: 15px;
+    }
+
+    .test div:first-child {
+        align-items: flex-start; 
+    }
+
+    .test div:last-child {
+        align-items: flex-end; 
+    }
+
+    .test div:first-child p,
+    .test div:last-child p {
+        margin: 0 0 0 2px; 
+        padding: 0; 
+    }
+
+    .progress-container {
+        gap: 15px; 
+        padding: 10px 20px;
+    }
+    
+    .progress-item img {
+        width: 60px; 
+    }
+
+    .streak-value{
+        font-size: 11px;
+        margin-top: -34px; 
+        padding: 5px 10px;
+    }
+
+    .lessons-value {
+        font-size: 22px; 
+        top: 20%;
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
+
+    .pie-chart {
+        width: 60px;
+        height: 60px;
+    }
+    .pie-chart::after {
+        width: 35px;  
+        height: 35px;
+    }
+
+    .tests-value{
+        font-size: 5px;
+        margin-top: -42px; 
+        padding: 0 35px 70px 27px;
+    }
+}
+
