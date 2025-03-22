@@ -1,0 +1,183 @@
+<!DOCTYPE html> <!-- версія html5-->
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>LanguageLab</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/icon.png">
+                <span class="site-name">LanguageLab</span>
+            </div>
+            <nav class="navbar">
+                <a href="#lessons" class="nav-btn">Уроки</a>
+                <a href="#practice" class="nav-btn">Практика</a>
+                <a href="#progress" class="nav-btn">Мій прогрес</a>
+            </nav>
+        </header>
+
+
+        <main>
+            <h2 class="lessons-title" id="lessons">Уроки</h2>
+            <section class="lessons">
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-1_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 1</h3>
+                    <p>Present Simple</p>
+                    <p>Present Continuous</p>
+                    <img src="images/Flask_100.png" class="lesson-icon">
+                </div>
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-2_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 2</h3>
+                    <p>Past Simple</p>
+                    <p>Past Continuous</p>
+                    <img src="images/Flask_100.png" class="lesson-icon">
+                </div>
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-3_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 3</h3>
+                    <p>Future Simple</p>
+                    <p>Future Continuous</p>
+                    <p>Will or Going to?</p>
+                    <img src="images/Flask_1-49.png" class="lesson-icon">
+                </div>
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-4_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 4</h3>
+                    <p>Past Perfect</p>
+                    <p>Past Perfect Continuous</p>
+                    <p>Adjectives and adverbs</p>
+                    <img src="images/Flask_1-49.png" class="lesson-icon">
+                </div>
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-5_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 5</h3>
+                    <p>Future Perfect</p>
+                    <p>Future Perfect Continuous</p>
+                    <p>Gerund or Infinitive</p>
+                    <img src="images/Flask_0.png" class="lesson-icon">
+                </div>
+                <div class="lesson">
+                    <div class="lesson-image-wrapper">
+                        <img src="images/lesson-6_image.png" class="lesson-image">
+                    </div>
+                    <h3>УРОК 6</h3>
+                    <p>So and Such</p>
+                    <p>Phrasal Verbs. Part 1</p>
+                    <p>Quantifiers</p>
+                    <img src="images/Flask_1-49.png" class="lesson-icon">
+                </div>
+            </section>
+
+
+            <h2 class="practice-title" id="practice">Практика</h2>
+            <section class="tests">
+                <div class="test">
+                    <div class="test-icon-container">
+                        <img src="images/grammar-img.png" class="test-icon">
+                    </div>
+                    <div class="test-content">
+                        <p>Test 1:</p>
+                        <p>Grammar - Infinitive and Gerund</p>
+                    </div>
+                    <div class="test-status">
+                        <p>Пройдено</p>
+                        <p>87/100</p>
+                    </div>
+                </div>
+                <div class="test">
+                    <div class="test-icon-container">
+                        <img src="images/listening-img.png" class="test-icon">
+                    </div>
+                    <div class="test-content">
+                        <p>Test 2:</p>
+                        <p>Listening - Good weather</p>
+                    </div>
+                    <div>
+                        <button class="start-btn">Почати</button>
+                    </div>
+                </div>
+                <div class="test">
+                    <div class="test-icon-container">
+                        <img src="images/grammar-img.png" class="test-icon">
+                    </div>
+                    <div class="test-content">
+                        <p>Test 3:</p>
+                        <p>Grammar - Present Simple</p>
+                    </div>
+                    <div>
+                        <button class="start-btn">Почати</button>
+                    </div>
+                </div>
+                <div class="test">
+                    <div class="test-icon-container">
+                        <img src="images/reading-img.png" class="test-icon">
+                    </div>
+                    <div class="test-content">
+                        <p>Test 4:</p>
+                        <p>Reading - The importance of Time Menagemant</p>
+                    </div>
+                    <div class="test-status">
+                        <p>Пройдено</p>
+                        <p>92/100</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <h2 class="progress-title" id="progress">Мій прогрес</h2>
+            <section class="progress">
+                <div class="progress-container">
+                    <!-- Перша картинка з текстом -->
+                    <div class="progress-item">
+                        <img src="images/Streak.png">
+                        <p class="streak-value">3 дн.</p>
+                        <p class="progress-text">Серія відвідувань</p>
+                    </div>
+            
+                    <!-- Друга картинка з текстом -->
+                    <div class="progress-item">
+                        <img src="images/Flask_big.png">
+                        <p class="lessons-value">2</p>
+                        <p class="progress-text">Уроків пройдено</p>
+                    </div>
+            
+                    <!-- Кругова діаграма -->
+                    <div class="progress-chart">
+                        <div class="pie-chart"></div>
+                        <p class="tests-value">2 тести</p>
+                        <p class="progress-text">179 / 200 балів</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <footer>
+            <div>
+                <p>© 2025 LanguageLab</p>
+                <p>НУ "ЛП"</p>
+            </div>
+            <div>
+                <p>Филипів Анастасія</p>
+                <p>OI-22</p>
+            </div>
+        </footer>
+    </body>
+</html>
+
