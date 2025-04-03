@@ -1,0 +1,912 @@
+html, body {
+    height: 100%; 
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    background-color: #100102;
+    scroll-behavior: smooth;
+}
+
+main {
+    flex: 1; 
+}
+
+header {
+    display: flex;                      
+    justify-content: space-between;    
+    align-items: center;
+    padding: 15px 25px;                 
+    position: relative;                 
+    top: 0;                            
+    left: 0;
+    width: 100%;                       
+    z-index: 1000;                     
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo img {
+    height: 55px; 
+    width: 40px; 
+}
+
+.site-name {
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 25px; 
+    color: white;
+    margin-left: 5px; 
+}
+
+.navbar {
+    display: flex;                   
+    background-color: #D9D9D9; 
+    padding: 10px;                
+    border-radius: 30px;                
+    margin-top: 8px;
+    margin-right: 60px;                   
+    margin-left: auto;                                          
+    width: fit-content;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 17px; 
+    padding: 3px 50px;                      
+    background-color: #BFBDBD;
+    border-radius: 15px; 
+    margin: 0 10px; 
+    box-sizing: content-box; 
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.25); 
+}
+
+.nav-btn:active {
+    transform: scale(0.95); 
+}
+
+footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%; 
+    background-color: #D9D9D9;
+    color: black; 
+    padding: 15px 40px; 
+    height: 60px; 
+    margin-top: 60px;
+    box-sizing: border-box;
+    position: relative; 
+}
+
+footer div {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+footer p {
+    margin: 0; 
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important; 
+}
+
+/*-----------------------------------------------ВІКНО УРОКИ----------------------------------------------------*/
+.lessons {
+    display: grid;                             
+    grid-template-columns: repeat(3, 1fr);      
+    gap: 50px;                                 
+    padding: 0 60px;                    
+}
+
+.lessons-title {
+    text-align: center;      
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #D9D9D9;
+    margin: 50px 0 20px 0;   
+    grid-column: span 3; 
+}
+
+.lesson {
+    position: relative;
+    background-color: #562B1A; 
+    border-radius: 30px; 
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left; 
+    height: 293px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lesson h3 {
+    position: absolute;
+    top: 133px; 
+    left: 2px; 
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 24px;
+    color: #F5F5F5;
+    padding: 0 20px;
+}
+
+.lesson p {
+    padding: 0 10px;
+    font-family: 'Instrument Sans', sans-serif; 
+    font-size: 15px;
+    color: #F5F5F5;
+    margin: 10px 0 0 10px;
+}
+
+.lesson-image-wrapper {
+    width: 100%; 
+    height: 67%; 
+    position: relative; 
+    overflow: hidden;
+}
+
+.lesson img.lesson-image{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 30px 30px 0 0 ; 
+}
+
+.lesson-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, #562B1A 100%);
+}
+
+.lesson img.lesson-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 22px;
+    width: 45px; 
+    height: 55px;
+}
+
+.lesson:hover {
+    box-shadow: 0 0 20px 2px rgba(181, 66, 19, 0.6);
+    transform: scale(1.05);
+}
+
+.lesson:active{
+    transform: scale(1); 
+}
+
+/*-----------------------------------------------ВІКНО ВМІСТ УРОКІВ----------------------------------------------------*/
+.lesson-content {
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.lesson-content h2 {
+    font-size: 40px;
+    color: #D9D9D9;
+    margin-left: 320px;
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+.lesson-topics {
+    display: grid;                             
+    grid-template-columns: 1fr;  
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Центрує блок по горизонталі */
+    width: fit-content; /* Щоб ширина підлаштовувалась під вміст */
+    text-align: center; /* Вирівнює текст всередині */
+}
+
+.lesson-topics li {
+    display: flex; /* Вирівнюємо вміст по горизонталі */
+    align-items: center; /* Вирівнюємо по центру висоти */
+    justify-content: space-between; /* Текст зліва, кнопка справа */
+    background: #562B1A;
+    border-radius: 15px;
+    height: 40px;
+    padding: 20px;
+    width: 800px; /* Додано фіксовану ширину */
+    margin: 0 auto; /* Центрує кожен прямокутник */
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: rgba(217, 217, 217, 0.6);
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.tooltip-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #F5F5F5;
+    font-family: 'Instrument Sans', sans-serif;
+    transition: color 0.2s ease-in-out;
+}
+
+.tooltip-link:hover {
+    color: #BFBDBD;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lesson-topics a:hover {
+    color: #BFBDBD;
+}
+
+.mark-topic-completed {
+    display: block;
+    padding: 8px 12px;
+    background: #BFBDBD;
+    color: black;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.mark-topic-completed:hover {
+    background: #a4a3a3;
+    transform: scale(1.05);
+}
+
+.mark-topic-completed:active{
+    transform: scale(1); 
+}
+
+
+/*-----------------------------------------------ВІКНО ПРАКТИКА----------------------------------------------------*/
+.practice-title {
+    text-align: center;       
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #D9D9D9;
+    margin: 50px 0 20px 0;    
+}
+
+.practice {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+    padding: 10px 50px 60px 50px; 
+}
+
+.test {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #562B1A; 
+    border-radius: 15px; 
+    padding: 15px 20px;
+    height: auto;
+}
+
+.test-icon-container {
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center; /* Вирівнює картинку по вертикалі */
+    justify-content: center; /* Вирівнює по горизонталі */
+    width: 50px; /* Фіксована ширина */
+}
+
+.test-icon {
+    width: 40px; 
+    height: 35px;
+}
+
+.test-content {
+    display: flex;
+    gap: 5px; 
+    font-size: 22px;
+    color: #F5F5F5;
+    align-items: center;
+    flex-grow: 1; 
+    margin-left: 4px; 
+}
+
+.test-status {
+    display: flex;
+    gap: 10px; 
+    font-size: 20px;
+    color: #F5F5F5; 
+    align-items: center;
+}
+
+.start-btn {
+    background-color: rgba(16, 1, 2, 0.3);
+    color: #F2F2EF;
+    font-size: 20px;
+    border: none;
+    padding: 6px 25px;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.start-btn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: wiggle 0.4s ease-in-out 0s 1 alternate forwards;
+}
+
+.start-btn:active {
+    transform: scale(0.95) !important;
+    animation: none !important;
+}
+
+/* Описуємо анімацію */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.view-answers-btn{
+    background-color: rgba(16, 1, 2, 0.3);
+    color: #F2F2EF;
+    font-size: 16px;
+    border: none;
+    padding: 6px 25px;
+    margin-right: 5px;
+    border-radius: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.start-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+.start-btn:active {
+    transform: scale(1);
+}
+
+/*-----------------------------------------------ВІКНО З ПИТАННЯМИ ТЕСТУ----------------------------------------------------*/
+.test-section {
+    visibility: hidden;  /* Ховає, але залишає у DOM */
+    opacity: 0;          /* Робить прозорим */
+    pointer-events: none; /* Вимикає взаємодію */
+    position: absolute;
+    padding: 40px;
+    background-color: #562B1A;
+    border-radius: 20px;
+    width: 1090px; 
+    max-width: 90%; 
+    margin: 50px auto;
+    z-index: 10;
+}
+
+.test-section.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    position: static;
+}
+
+.test-section h2 {
+    text-align: center;       
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    color: #D9D9D9;
+    margin-bottom: 40px;
+}
+
+.question {
+    font-family: 'Instrument Sans', sans-serif;
+    color: #F5F5F5;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    padding: 5px; 
+    font-size: 18px; 
+    border: 2px solid #D9D9D9; 
+    border-radius: 10px; 
+    background-color: #F5F5F5; 
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 15px; 
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: #d5d3d3; 
+}
+
+button[type="submit"] {
+    background-color: #9FD5FA; 
+    color: black; 
+    font-size: 22px; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 15px; 
+    margin-left: 880px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+button[type="submit"]:hover {
+    background-color: #7da6c0; 
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    transform: scale(1); 
+}
+
+input[type="text"].correct {
+    border: 2px solid #2f9246; /* Зелена рамка */
+    background-color: #e8f9e1; /* Світло-зелений фон */
+}
+
+/* Стилі для полів вводу з неправильними відповідями */
+input[type="text"].incorrect {
+    border: 2px solid #bd3744; 
+    background-color: #f8d7da; 
+}
+
+.test-result {
+    font-size: 30px;
+    color: #9FD5FA;
+    margin-top: 15px;
+    margin-left: 380px;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+}
+
+.exit-btn{
+    background-color: #9FD5FA; 
+    color: black; 
+    font-size: 20px; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 15px; 
+    margin-left: 500px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.exit-btn:hover {
+    background-color: #7da6c0; 
+    transform: scale(1.05);
+}
+
+.exit-btn:active {
+    transform: scale(1); 
+}
+.answers-section {
+    display: none; /* Спочатку сховати розділ */
+    padding: 40px;
+    background-color: #562B1A;
+    border-radius: 20px;
+    width: 1090px;
+    margin: 50px auto;
+    z-index: 10;
+    position: relative; 
+}
+
+.answers-section.active {
+    display: block; /* Показати розділ, коли потрібно */
+}
+
+.answers-section .question {
+    margin-bottom: 25px;
+}
+
+.answers-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.answers-section p strong {
+    font-weight: bold;
+    color: #F5F5F5;
+}
+
+
+/*-----------------------------------------------ВІКНО МІЙ ПРОГРЕС----------------------------------------------------*/
+.progress-title {
+    text-align: center;       
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #D9D9D9;
+    margin: 50px 0 20px 0;    
+}
+
+.progress-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    justify-items: center; 
+    align-items: center;
+    text-align: center;
+    padding: 10px 60px 10px 60px;
+}
+
+.progress-item {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-item img {
+    width: 150px; 
+    height: auto;
+}
+
+.pie-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #B54213 0% 91%,  
+        #FFDB58 91% 100%  
+    );
+    display: block;
+    margin: 10px;
+    position: relative;
+}
+
+.pie-chart::after {
+    content: "";
+    width: 100px;  
+    height: 100px;
+    background-color: #100102; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.streak-value{
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    margin-top: -65px; 
+    padding: 5px 10px;
+}
+
+.lessons-value{
+    position: absolute;
+    top: 30%; 
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+.tests-value{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #D9D9D9;
+    margin-top: -100px; 
+    padding: 0 45px 70px 70px;
+}
+
+.progress-text{
+    font-size: 25px;
+    color: #D9D9D9;
+}
+
+#timer {
+    font-size: 22px;
+    color: #F5F5F5;
+    margin-top: 20px;
+    margin-left: 1150px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+
+/*------------------Адаптивність для планшетів--------------------------------------------------*/
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 8px; 
+        margin-left: 20px; 
+        margin-right: 40px;
+    }
+
+    .nav-btn {
+        font-size: 15px; 
+        padding: 3px 30px; 
+        border-radius: 10px; 
+    }
+
+    .lessons {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px; 
+        padding: 10px 40px 0 40px;
+    }
+
+    .lesson {
+        height: 285px; 
+    }
+
+    .lesson h3 {
+        font-size: 20px;
+        padding: 0 15px 0 15px;
+    }
+    
+    .lesson p {
+        font-size: 14px;
+    }
+
+    .tests {
+        padding: 10px 40px;
+    }
+
+    .test {
+        padding: 12px 15px;
+    }
+
+    .test-icon {
+        width: 35px; 
+        height: 30px;
+        align-self: center;
+        margin-left: 2px;
+        margin-right: 10px;
+    }
+
+    .test-content {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 3px;
+        font-size: 18px;
+    }
+
+    .test-status {
+        flex-direction: column; 
+        align-items: flex-end;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .test-content p, .test-status p {
+        margin: 0; 
+        padding: 0;
+    }
+
+    .start-btn {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+
+    .progress-container {
+        gap: 30px; 
+        padding: 10px 40px;
+    }
+    
+    .progress-item img {
+        width: 120px; 
+    }
+
+    .lessons-value {
+        font-size: 40px; 
+        top: 30%;
+    }
+
+    .progress-text {
+        font-size: 22px;
+    }
+
+    .pie-chart {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .pie-chart::after {
+        width: 80px;  
+        height: 80px;
+    }
+
+    .tests-value{
+        font-size: 18px;
+        margin-top: -74px; 
+        padding: 0 35px 70px 43px;
+    }
+
+}
+
+/*------------------Адаптивність для смартфонів--------------------------------------------------*/
+@media (max-width: 768px) {
+    .logo img {
+        height: 28px; 
+        width: 18px; 
+    }
+
+    .site-name {
+        font-size: 13px; 
+        margin-left: 2px; 
+    }
+
+    .navbar {
+        padding: 5px 1px;                  
+        margin-right: 15px;
+        width: fit-content;
+        margin: 0 auto; 
+    }
+
+    .nav-btn {
+        font-size: 10px; 
+        padding: 3px 10px; 
+        border-width: 1px;
+        flex-grow: 1; 
+        margin: 0 3px;
+        min-width: 45px;
+    }
+
+    .lessons {
+        grid-template-columns: 1fr; 
+        gap: 35px;
+        padding: 0 20px 0 20px;
+    }
+
+    .lesson{
+        height: 185px;
+    }
+
+    .lesson h3 {
+        top: 65px; 
+        left: 4px; 
+        font-size: 18px;
+        padding: 0 15px 0 15px;
+    }
+
+    .lesson p {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .lesson-image-wrapper {
+        height: 60%; 
+    }
+    
+    .lesson-image-wrapper::after {
+        height: 40%; 
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, #562B1A 95%);
+    }
+
+    .lesson img.lesson-image{
+        height: auto; 
+        width: 100%; 
+        margin-top: 0;
+    }
+
+    .lesson img.lesson-icon {
+        bottom: 20px;
+        right: 25px;
+        width: 35px; 
+        height: 45px;
+    }
+
+    .tests {
+        padding: 0 10px 60px 10px; 
+    }
+
+    .test {
+        padding: 8px;
+        height: 70px;
+    }
+
+    .test-icon {
+        width: 30px; 
+        height: 25px;
+        margin-left: 0;
+        margin-right: 3px;
+    }
+
+    .start-btn {
+        font-size: 15px;
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    .test-content {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 3px;
+        font-size: 16px;
+    }
+
+    .test-status {
+        flex-direction: column; 
+        align-items: flex-end;
+        font-size: 13px;
+        margin-right: 6px;
+    }
+
+    .test-content p, .test-status p {
+        margin: 0; 
+        padding: 0;
+    }
+
+    .progress-container {
+        gap: 15px; 
+        padding: 10px 20px;
+    }
+    
+    .progress-item img {
+        width: 60px; 
+    }
+
+    .streak-value{
+        font-size: 11px;
+        margin-top: -34px; 
+        padding: 5px 10px;
+    }
+
+    .lessons-value {
+        font-size: 22px; 
+        top: 20%;
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
+
+    .pie-chart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pie-chart::after {
+        width: 35px;  
+        height: 35px;
+    }
+
+    .tests-value{
+        font-size: 5px;
+        margin-top: -42px; 
+        padding: 0 35px 70px 27px;
+    }
+}
+
